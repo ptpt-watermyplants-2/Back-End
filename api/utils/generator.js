@@ -3,9 +3,9 @@ const { jwtSecret } = require('../../config');
 
 module.exports = function (user) {
   const payload = {
-    id: user.user_id,
+    sub: user.user_id,
     username: user.username,
-    phone_number: user.phone_number,
+    role: user.role,
   };
 
   const options = {

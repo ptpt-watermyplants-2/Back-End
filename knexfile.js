@@ -1,5 +1,3 @@
-const dotenv = require('dotenv').config();
-
 module.exports = {
   development: {
     client: 'sqlite3',
@@ -16,24 +14,8 @@ module.exports = {
     },
   },
 
-  staging: {
-    client: 'pg',
-    connection: {
-      connectionString: process.env.DATABASE_URL,
-      ssl: { rejectUnauthorized: false },
-    },
-    useNullAsDefault: true,
-    debug: true,
-    pool: {
-      min: 2,
-      max: 10,
-    },
-    searchPath: ['knex', 'public'],
-    migrations: {
-      directory: './data/migrations',
-    },
-    acquireConnectionTimeout: 10000,
-  },
+  testing: {},
+  staging: {},
 
   production: {
     client: 'pg',
@@ -45,14 +27,7 @@ module.exports = {
       min: 2,
       max: 10,
     },
-    searchPath: ['knex', 'public'],
-    useNullAsDefault: true,
-    migrations: {
-      directory: './data/migrations',
-    },
-    seeds: {
-      directory: './data/seeds',
-    },
-    acquireConnectionTimeout: 10000,
+    migrations: { directory: './data/migrations' },
+    seeds: { directory: './data/seeds' },
   },
 };
