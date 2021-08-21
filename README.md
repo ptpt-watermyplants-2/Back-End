@@ -78,7 +78,7 @@ Deployed link is https://ancient-garden-79091.herokuapp.com/
 | ------------- | ------- | ------------------------------------------------- |
 | nickname      | String  | <p>Special nickname of plant if wanted</p>        |
 | species       | String  | <p>Plant species</p>                              |
-| h3o_frequency | String  | <p>How often the plant requires watering</p>      |
+| h2o_frequency | String  | <p>How often the plant requires watering</p>      |
 | image         | String  | <p>Image link for the plant</p>                   |
 | user_id       | Integer | <p>User ID associated to the plant \*REQUIRED</p> |
 
