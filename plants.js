@@ -11,6 +11,7 @@ exports.seed = function (knex) {
           species: 'tomato',
           h2o_frequency: '12 hrs',
           image: '',
+          user_id: 1,
         },
         {
           plant_id: 2,
@@ -18,6 +19,7 @@ exports.seed = function (knex) {
           species: 'bell pepper',
           h2o_frequency: '1 week',
           image: '',
+          user_id: 2,
         },
       ]);
     });

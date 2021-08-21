@@ -1,0 +1,34 @@
+const db = require('../../data/dbConfig');
+
+// Get users plants
+const getUsersPlants = (user_id) => {
+  return db('plants')
+    .select('plant_id', 'nickname', 'h2o_frequency', 'species', 'image')
+    .where({ user_id })
+    .first()
+    .orderBy('plant_id');
+};
+
+// Get plant by id
+const getPlantById = (plant_id) => {
+  return db('plants')
+    .select('plant_id', 'nickname', 'h2o_frequency', 'species', 'image')
+    .where({ plant_id })
+    .first();
+};
+
+// Create plant
+const addPlant = async (plant) => {
+  const [id] = await db('plants').insert(plant);
+
+  return getPlantById(id);
+};
+
+// Update plant
+const updatePlant = async (plant_id, changes) => {
+  await db('plants').where({ plant_id }).update(changes);
+
+  return getPlantById(plant_id);
+};
+
+module.exports = { getUsersPlants, getPlantById, addPlant, updatePlant };

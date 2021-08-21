@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const restricted = require('../middleware/restricted');
 const User = require('../models/user-model');
-// const { restricted } = require('../middleware/restricted');
 
 // Get all users
 router.get('/', async (req, res, next) => {
@@ -40,6 +39,33 @@ router.delete('/:id', restricted, (req, res, next) => {
       console.log(err);
       next({ message: 'Error deleting user' });
     });
+});
+
+// Users plants
+router.get(`/:id/plants`, (req, res, next) => {
+  User.getUsersPlants(req.params.id)
+    .then((plants) => {
+      if (!plants) {
+        next({ status: 404, message: 'User has no plants' });
+      } else {
+        res.status(200).json(plants);
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      next({ message: 'Error getting users plants' });
+    });
+});
+
+// Update user
+router.put('/:id', async (req, res, next) => {
+  let updates = req.body;
+
+  await User.updateUser(req.params.id, updates)
+    .then((updatedUser) => {
+      res.json(updatedUser);
+    })
+    .catch(next);
 });
 
 module.exports = router;
