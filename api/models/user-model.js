@@ -1,4 +1,3 @@
-const bcrypt = require('bcryptjs');
 const db = require('../../data/dbConfig');
 
 // Get all users
@@ -14,35 +13,16 @@ const getById = (user_id) => {
     .select('user_id', 'username', 'phone_number')
     .where({ user_id })
     .first();
-
-  // const returnedUser = {
-  //   user_id: user.user_id,
-  //   username: user.username,
-  //   phone_number: user.phone_number,
-  //   plants: await getUsersPlants(user.user_id),
-  // };
 };
 
 // Get users plants
-// const getUsersPlants = async (id) => {
-//   const plants = await db('plants as p')
-//     .join('users_plants as upl', 'upl.plantId', 'p.plant_id')
-//     .join('users as u', 'u.user_id', 'upl.userId')
-//     .select(
-//       'p.plant_id',
-//       'p.nickname',
-//       'p.species',
-//       'p.h2o_frequency',
-//       'p.image'
-//     )
-//     .where({ 'upl.userId': id })
-//     .groupBy('p.plant_id')
-//     .then((row) => {
-//       return row;
-//     });
-
-//   return plants;
-// };
+const getUsersPlants = (user_id) => {
+  return db('plants')
+    .select('plant_id', 'nickname', 'h2o_frequency', 'species', 'image')
+    .where({ user_id })
+    .first()
+    .orderBy('plant_id');
+};
 
 // Get user by filter
 const findUserBy = (filter) => {
@@ -66,11 +46,19 @@ const deleteUser = async (user_id) => {
   return toBeDeleted;
 };
 
+// Update user
+const updateUser = async (user_id, changes) => {
+  await db('users').where({ user_id }).update(changes);
+
+  return getById(user_id);
+};
+
 module.exports = {
   addUser,
   getAll,
   getById,
-  // getUsersPlants,
+  getUsersPlants,
   findUserBy,
   deleteUser,
+  updateUser,
 };

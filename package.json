@@ -7,8 +7,8 @@
     "start": "cross-env node index.js",
     "server": "cross-env nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "migrate": "knex migrate:latest",
-    "seed": "knex seed:run"
+    "migrate": "npx knex migrate:latest",
+    "seed": "npx knex seed:run"
   },
   "keywords": [],
   "author": "Tristan Miller <tristanmiller89@gmail.com>",

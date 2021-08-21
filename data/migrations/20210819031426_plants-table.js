@@ -5,6 +5,13 @@ exports.up = function (knex) {
     tbl.string('species');
     tbl.string('h2o_frequency');
     tbl.string('image');
+    tbl
+      .integer('user_id')
+      .unsigned()
+      .notNullable()
+      .references('users.user_id')
+      .onUpdate('CASCADE')
+      .onDelete('CASCADE');
   });
 };
 
