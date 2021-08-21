@@ -32,7 +32,7 @@ Deployed link is https://sheltered-ridge-22535.herokuapp.com/api/
 | password     | String  | <p>The New Users password \*Required</p> |
 | phone_number | Integer | <p>The New Users phone number<p>         |
 
-# Users
+# /api/users
 
 ## Gets all users (redundant)
 
