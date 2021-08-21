@@ -1,12 +1,13 @@
 # Water My Plants v1.0.0
 
 Backend for ptpt-watermyplants-2
+Deployed link is https://sheltered-ridge-22535.herokuapp.com/api/
 
 # /
 
 ## Logs a User In
 
-<p>Logs a User In</p>
+<p>Logs a User In. Returns a token.</p>
 
     POST /api/login
 
@@ -31,7 +32,7 @@ Backend for ptpt-watermyplants-2
 | password     | String  | <p>The New Users password \*Required</p> |
 | phone_number | Integer | <p>The New Users phone number<p>         |
 
-# /users
+# /api/users
 
 ## Gets all users (redundant)
 
@@ -47,7 +48,7 @@ Backend for ptpt-watermyplants-2
 
 ## Deletes user
 
-<p>Delete user by id</p>
+<p>Delete user by id. Token is required for deletion.</p>
 
     DELETE /api/users/:id
 
