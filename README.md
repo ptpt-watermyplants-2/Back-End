@@ -1,6 +1,7 @@
 # Water My Plants v1.0.0
 
 Backend for ptpt-watermyplants-2
+Deployed link is https://sheltered-ridge-22535.herokuapp.com/api/
 
 # /
 
