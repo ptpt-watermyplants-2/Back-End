@@ -1,7 +1,7 @@
 # Water My Plants v1.0.0
 
 Backend for ptpt-watermyplants-2
-Deployed link is https://ancient-garden-79091.herokuapp.com/
+Deployed link is https://damp-ravine-25485.herokuapp.com/
 
 # /
 
