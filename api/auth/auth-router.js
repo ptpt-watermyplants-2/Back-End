@@ -45,9 +45,4 @@ router.post('/login', checkAuthPayload, (req, res, next) => {
     .catch(next);
 });
 
-// Logout user
-// router.get('/logout', (req, res) => {
-//   if ()
-// })
-
 module.exports = router;

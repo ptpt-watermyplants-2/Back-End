@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const restricted = require('../middleware/restricted');
 const User = require('../models/user-model');
 // const { restricted } = require('../middleware/restricted');
 
@@ -30,7 +31,7 @@ router.get('/:id', async (req, res, next) => {
 });
 
 // Delete user
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id', restricted, (req, res, next) => {
   User.deleteUser(req.params.id)
     .then((deletedUser) => {
       res.status(200).json({ message: 'User has been deleted' });
