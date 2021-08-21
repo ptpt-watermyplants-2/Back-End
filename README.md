@@ -7,7 +7,7 @@ Deployed link is https://sheltered-ridge-22535.herokuapp.com/api/
 
 ## Logs a User In
 
-<p>Logs a User In</p>
+<p>Logs a User In. Returns a token.</p>
 
     POST /api/login
 
