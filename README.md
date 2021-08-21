@@ -48,6 +48,6 @@ Deployed link is https://sheltered-ridge-22535.herokuapp.com/api/
 
 ## Deletes user
 
-<p>Delete user by id</p>
+<p>Delete user by id. Token is required for deletion.</p>
 
     DELETE /api/users/:id
