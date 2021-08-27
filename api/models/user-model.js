@@ -34,7 +34,9 @@ const findUserBy = (filter) => {
 
 // Add user
 const addUser = async (user) => {
-  return db('users').insert(user);
+  const [id] = await db('users').insert(user).select('*');
+
+  return getById(id);
 };
 
 // Delete user
