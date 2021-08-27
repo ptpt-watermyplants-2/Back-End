@@ -20,11 +20,15 @@ router.post(
 
     newUser.password = hashedPassword;
 
-    User.addUser(newUser)
-      .then((newUser) => {
-        res.status(201).json(newUser);
-      })
-      .catch(next);
+    if (!newUser.username || !newUser.password) {
+      res.status(401).json({ message: 'Username and password required' });
+    } else {
+      User.addUser(newUser)
+        .then((newUser) => {
+          res.status(201).json(newUser);
+        })
+        .catch(next);
+    }
   }
 );
 
