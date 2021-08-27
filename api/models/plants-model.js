@@ -1,11 +1,10 @@
 const db = require('../../data/dbConfig');
 
 // Get users plants
-const getUsersPlants = (user_id) => {
+const getUsersPlants = async (user_id) => {
   return db('plants')
     .select('plant_id', 'nickname', 'h2o_frequency', 'species', 'image')
     .where({ user_id })
-    .first()
     .orderBy('plant_id');
 };
 

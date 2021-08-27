@@ -20,7 +20,6 @@ const getUsersPlants = (user_id) => {
   return db('plants')
     .select('plant_id', 'nickname', 'h2o_frequency', 'species', 'image')
     .where({ user_id })
-    .first()
     .orderBy('plant_id');
 };
 
