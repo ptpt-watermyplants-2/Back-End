@@ -25,7 +25,7 @@ router.post(
     } else {
       User.addUser(newUser)
         .then((newUser) => {
-          res.status(201).json(newUser);
+          res.status(201).json({ message: `Welcome ${newUser.username}` });
         })
         .catch(next);
     }
