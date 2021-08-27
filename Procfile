@@ -1,2 +1,2 @@
-web: npm start
+web: npm run start
 worker: npx knex migrate:latest
