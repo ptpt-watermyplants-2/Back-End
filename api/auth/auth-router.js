@@ -24,8 +24,10 @@ router.post(
       res.status(401).json({ message: 'Username and password required' });
     } else {
       User.addUser(newUser)
-        .then((newUser) => {
-          res.status(201).json({ message: `Welcome ${newUser.username}` });
+        .then((created) => {
+          res
+            .status(201)
+            .json({ message: 'User has been created, please log in.' });
         })
         .catch(next);
     }
