@@ -19,9 +19,7 @@ const getPlantById = (plant_id) => {
 
 // Create plant
 const addPlant = async (plant) => {
-  const [id] = await db('plants').insert(plant);
-
-  return getPlantById(id);
+  return db('plants').insert(plant);
 };
 
 // Update plant
