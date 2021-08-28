@@ -1,6 +1,6 @@
 # Water My Plants v1.0.0
 
-Backend for ptpt-watermyplants-2
+Backend for ptpt-watermyplants-2 \br
 Deployed link is https://damp-ravine-25485.herokuapp.com/
 
 - [Auth](#auth)
