@@ -52,4 +52,16 @@ router.put('/:id', async (req, res, next) => {
     .catch(next);
 });
 
+// Delete plant
+router.delete('/:id', async (req, res, next) => {
+  Plant.deletePlant(req.params.id)
+    .then((deletedPlant) => {
+      res.status(200).json({ message: 'Plant has been deleted' });
+    })
+    .catch((err) => {
+      console.log(err);
+      next({ message: 'Error deleting plant' });
+    });
+});
+
 module.exports = router;
