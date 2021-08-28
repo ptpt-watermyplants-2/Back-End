@@ -3,7 +3,25 @@
 Backend for ptpt-watermyplants-2
 Deployed link is https://damp-ravine-25485.herokuapp.com/
 
-# /
+- [Auth](#auth)
+    - [Logs a user in](#logs-a-user-in)
+    - [Registers a new user](#registers-a-new-user)
+    
+- [Users](#users)
+    - [Gets all users](#gets-all-users)
+    - [Gets user by id](#gets-user-by-id)
+    - [Delete user](#deletes-user)
+    - [Update user](#updates-user)
+    - [Get users plants](#gets-users-plants)
+
+- [Plants](#plants)
+    - [Create new plant](#creates-a-plant)
+    - [Get plants by id](#gets-specific-plant)
+    - [Update plant](#updates-a-plant)
+    - [Get users plants](#get-users-plants)
+    - [Delete plant](#delete-plant-by-id)
+
+# Auth 
 
 ## Logs a User In
 
@@ -32,9 +50,9 @@ Deployed link is https://damp-ravine-25485.herokuapp.com/
 | password     | String  | <p>The New Users password \*Required</p> |
 | phone_number | Integer | <p>The New Users phone number<p>         |
 
-# /api/users
+# Users
 
-## Gets all users (redundant)
+## Gets all users
 
 <p>Gets all users</p>
 
@@ -64,7 +82,7 @@ Deployed link is https://damp-ravine-25485.herokuapp.com/
 
     GET /api/users/:id/plants
 
-# /plants
+# Plants 
 
 ## Creates a plant
 
