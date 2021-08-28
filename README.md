@@ -104,4 +104,4 @@ Deployed link is https://damp-ravine-25485.herokuapp.com/
 
 <p>Deletes specific plant</p>
 
-    DEL /api/plants/:id
+    DELETE /api/plants/:id
