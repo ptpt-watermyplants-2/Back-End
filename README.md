@@ -16,8 +16,8 @@ Deployed link is https://damp-ravine-25485.herokuapp.com/
 
 - [Plants](#plants)
     - [Create new plant](#creates-a-plant)
-    - [Get plants by id](#gets-specific-plant)
-    - [Update plant](#updates-a-plant)
+    - [Get plants by id](#get-plant-by-id)
+    - [Update plant](#update-plant)
     - [Get users plants](#get-users-plants)
     - [Delete plant](#delete-plant-by-id)
 
