@@ -36,7 +36,7 @@ router.post('/', async (req, res, next) => {
 
   await Plant.addPlant(newPlant)
     .then((plant) => {
-      res.status(201).json(plant);
+      res.status(201).json({ message: 'Plant has been added' });
     })
     .catch(next);
 });
