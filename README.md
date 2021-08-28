@@ -99,3 +99,9 @@ Deployed link is https://damp-ravine-25485.herokuapp.com/
 <p>Does the same thing as in users. Gets users plants by ID</p>
 
     GET /api/plants/:id/plants
+
+## Delete plant by id
+
+<p>Deletes specific plant</p>
+
+    DEL /api/plants/:id

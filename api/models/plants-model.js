@@ -28,4 +28,17 @@ const updatePlant = async (plant_id, changes) => {
   return getPlantById(plant_id);
 };
 
-module.exports = { getUsersPlants, getPlantById, addPlant, updatePlant };
+// Delete plant
+const deletePlant = async (plant_id) => {
+  const toBeDeleted = await getPlantById(plant_id);
+  await db('plants').where({ plant_id }).del();
+  return toBeDeleted;
+};
+
+module.exports = {
+  getUsersPlants,
+  getPlantById,
+  addPlant,
+  updatePlant,
+  deletePlant,
+};
